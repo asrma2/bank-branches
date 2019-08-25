@@ -1,0 +1,70 @@
+<div class="filter"> 
+	<div class=" city-select "> 
+		<label>Select City :</label>
+		<select id="filterby" ng-model="city" ng-options="e for e in cities" ng-change="loadData()"></select>
+	</div>
+	<div class="search"> 
+		<input class="form-control" id="myInput" type="text" ng-model="searchString" placeholder="Search.." ng-change="searchData()">
+	</div>
+</div>
+<div class="line"> 
+</div>
+
+<div ng-show="branchList == undefined"> <h3>Nothing to show</h3></div> 
+
+<div class="bank-list" ng-show="branchList != undefined">
+	<div class="paging-tab">
+		<div class="pagination"> 
+			<dir-pagination-controls
+		       		max-size="5"
+		       		direction-links="true"
+		       		boundary-links="true" >
+		    	</dir-pagination-controls>
+		</div>
+		<div class="result-per-page"> 
+			<label> Results Per Page: </label> 
+			<select id="filterby" ng-model="filterValue" ng-options="e for e in filters"></select>
+		</div>
+	</div>
+  
+	<table id="tblAllMatch" class="table table-striped table-bordered table-hover table-responsive">
+        <thead>
+        	<th></th>
+         	<th>IFSC Code</th>
+          	<th>Branch Name</th>
+           	<th>Address</th>
+          	<th>City</th>
+          	<th>State</th>
+           	<th>Bank Name</th>
+           	<th></th>
+      	</thead>
+      	<tbody>   
+	        <tr dir-paginate="details in branchList| itemsPerPage: filterValue">
+	         	<td style="cursor: pointer"><a ng-click="addBranch(details.ifsc, details.branch, details.address, details.city, details.state, details.bank_name)" ng-href="">View</a></td>
+	          	<td>{{details.ifsc}}</td>
+	          	<td>{{details.branch}}</td>
+	           	<td>{{details.address}}</td>
+	           	<td>{{details.city}}</td>
+	          	<td>{{details.state}}</td>
+	          	<td>{{details.bank_name}}</td>
+	          	<td> 
+	          		<button ng-show="!details.favourite" ng-click="addFavourite(details)">Add to Favourites</button>
+	          		<button ng-show="details.favourite" ng-click="removeFavourite(details)">Remove from Favourites</button>
+	          	</td>
+	        </tr>
+			
+  		</tbody>
+    </table>
+</div>
+
+<!--<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+  	console.log("Entered");
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>-->

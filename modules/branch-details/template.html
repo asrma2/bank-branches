@@ -1,0 +1,13 @@
+ <div class="container-fluid bs-component row">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-show="flag">
+		<h4>{{singleBranch.bank_name}}</h4>
+        <p><b> IFSC: </b> {{singleBranch.ifsc}}</p>
+        <p><b> Branch Name: </b>  {{singleBranch.branch}}</p>
+        <p><b> Address: </b>   {{singleBranch.address}}</p>
+        <p><b> City: </b>  {{singleBranch.city}}</p>
+        <p><b> State: </b>  {{singleBranch.state}}</p>
+    </div> 
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-show="!flag">
+		<h4>Page not Found</h4>
+    </div>   
+</div>

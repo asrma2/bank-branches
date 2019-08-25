@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="BranchesApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bank Branches</title>
+
+    <!-- Bootstrap Core CSS -->
+  	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+
+    <!-- Theme CSS -->
+    <link href="css/branch.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+   <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
+   <script type="text/javascript" src="angular/app.js"></script>
+   <script type="text/javascript" src="angular/routes.js"></script>
+   <script type="text/javascript" src="modules/branch-list/controller.js"></script>
+   <script type="text/javascript" src="modules/branch-details/controller.js"></script>
+   <script type="text/javascript" src="modules/favourites/controller.js"></script>
+   <script src="js/dirPagination.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js">
+    </script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+			    <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+			        <div class="navbar-header page-scroll">
+			            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			                <span class="sr-only">Toggle navigation</span>
+			                    Menu 
+			                <i class="fa fa-bars"></i>
+			            </button>
+			            <a class="navbar-brand active" href="./">Bank Branches</a>
+
+			        </div>
+
+			        <!-- Collect the nav links, forms, and other content for toggling -->
+			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			            <ul class="nav navbar-nav navbar-right">  
+			                <li><a href="./">Home</a></li>
+			                <li><a href="./#!/favourites">Favourites</a></li>
+			            </ul>
+			        </div>
+			        <!-- /.navbar-collapse -->
+			    </div>
+			    <!-- /.container -->
+			</nav>
+		</div> 
+	</div>
+
+	    <!-- Main Content -->
+	<div class="container" style="position: absolute; top:7vw; left:1vw; right:1vw;"> 
+		<div class="col-md-12 col-sm-12 col-xs-12"> 
+			<div ng-view></div>
+		</div>
+	</div>    
+
+</body>
+
+</html>
